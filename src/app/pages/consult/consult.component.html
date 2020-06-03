@@ -3,7 +3,7 @@
   <article class="consultation">
       <div *ngFor="let ressource of ressources" class="card-container">
         <a class="card" target="_blank" rel="noopener" (click)="onSelect(ressource)">
-            {{ ressource.name }}
+            {{ ressource.marque }}
             <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>   
         </a>
       </div>
@@ -13,10 +13,10 @@
   <div class="details">
     <div *ngIf="selectedRessource">
       <!-- <h2>{{selectedRessource.name | uppercase}}</h2> -->
-      <h2>{{selectedRessource.name }}</h2>
+      <h2>{{selectedRessource.marque }}</h2>
       <div><span>Id : </span>{{selectedRessource.id}}</div>
-      <div><span>Name : </span>{{selectedRessource.name}}</div>
-      <div><span>Age : </span>{{selectedRessource.age}}</div>
+      <div><span>Marque : </span>{{selectedRessource.marque}}</div>
+      <div><span>Date de sortie : </span>{{selectedRessource.date_sortie}}</div>
       <div><span>Category : </span>{{selectedRessource.category}}</div>
       <button class="button" (click)="deleteRessource(selectedRessource.id)" >Supprimer</button>
     </div>

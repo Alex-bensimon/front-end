@@ -22,7 +22,7 @@ public createRessource(ressource: Ressource) {
     })
   };
 
-  return this.httpClient.post<Ressource>(`${this.apiURL}/animals`, ressource, httpOptions)
+  return this.httpClient.post<Ressource>(`${this.apiURL}/pcs`, ressource, httpOptions)
     .pipe(map(resp => {
   }));
 }
@@ -39,7 +39,7 @@ public deleteRessource(id: number) {
     })
   };
 
-  return this.httpClient.delete<Ressource>(`${this.apiURL}/animals/` + id, httpOptions)
+  return this.httpClient.delete<Ressource>(`${this.apiURL}/pcs/` + id, httpOptions)
     .pipe(map(resp => {
   }));
 }
@@ -55,6 +55,6 @@ public getRessources(url?: string) {
       Authorization: 'Basic ' +  btoa(username + ':' + password)
     })
   };
-  return this.httpClient.get<Ressource[]>(`${this.apiURL}/animals`, httpOptions);
+  return this.httpClient.get<Ressource[]>(`${this.apiURL}/pcs`, httpOptions);
 }
 }

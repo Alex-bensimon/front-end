@@ -2,7 +2,7 @@ import { logging } from 'protractor';
 
 export interface Ressource {
     id: number;
-    name: string;
-    age: number;
+    marque: string;
+    date_sortie: string;
     category: string;
 }

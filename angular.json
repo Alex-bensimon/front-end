@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "sudria-frontend": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sudria-frontend"
+    }
+  },
+  "defaultProject": "sudria-frontend",
+  "cli": {
+    "analytics": "7931f84b-6e78-40d3-a527-40fe45c1b69b"
+  }
 }
