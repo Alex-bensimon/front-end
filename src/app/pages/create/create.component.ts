@@ -16,9 +16,9 @@ export class CreateComponent implements OnInit {
   constructor(private apiService: ApiService,
               private formBuilder: FormBuilder) {
                 this.ressourceForm = this.formBuilder.group({
-                  name: 'Nemo test',
-                  age: '1',
-                  category: 'Fich'
+                  marque: 'Accer',
+                  date_sortie: '12/12/2012',
+                  category: 'Tablette'
                 });
               }
 
