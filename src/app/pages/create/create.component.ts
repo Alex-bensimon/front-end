@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/service/api.service';
 import { Ressource } from '../consult/Ressource';
 import { FormBuilder  } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-create',
@@ -14,7 +16,8 @@ export class CreateComponent implements OnInit {
   ressourceForm;
 
   constructor(private apiService: ApiService,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private router: Router) {
                 this.ressourceForm = this.formBuilder.group({
                   marque: 'Accer',
                   date_sortie: '12/12/2012',
@@ -25,14 +28,20 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(ressource: Ressource) {
-    this.apiService.createRessource(ressource)
-          .subscribe(
-            (res) => {
-                    console.log(res);
-                  });
-    this.submitted = true;
-    this.ressourceForm.reset();
-    }
 
+    onSubmit(ressource: Ressource) {
+      this.apiService.createRessource(ressource)
+            .subscribe(
+              //success
+              data => {
+                this.router.navigate(['/consult']);
+              },
+              // error
+              error => {
+                alert('Error' + error.error);
+                console.log('Error occured', error);
+                //afficher message sur IHM
+              }
+            );
+      }
 }
