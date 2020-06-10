@@ -14,10 +14,33 @@
     <div *ngIf="selectedRessource">
       <!-- <h2>{{selectedRessource.name | uppercase}}</h2> -->
       <h2>{{selectedRessource.marque }}</h2>
-      <div><span>Id : </span>{{selectedRessource.id}}</div>
-      <div><span>Marque : </span>{{selectedRessource.marque}}</div>
-      <div><span>Date de sortie : </span>{{selectedRessource.date_sortie}}</div>
-      <div><span>Category : </span>{{selectedRessource.category}}</div>
-      <button class="button" (click)="deleteRessource(selectedRessource.id)" >Supprimer</button>
+      <mat-form-field class="example-full-width">
+
+        <mat-label>Id</mat-label>
+
+        <input matInput placeholder="id de la ressource" value="{{selectedRessource.id}}">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+
+        <mat-label>Marque</mat-label>
+
+        <input matInput placeholder="Nom de la marque" value="{{selectedRessource.marque}}">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+
+        <mat-label>Date de sortie</mat-label>
+
+        <input matInput placeholder="Date de sortie" value="{{selectedRessource.date_sortie}}">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+
+        <mat-label>Catégorie</mat-label>
+
+        <input matInput placeholder="Catégorie" value="{{selectedRessource.category}}">
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" (click)="updateRessource(selectedRessource.id)" >Modifier</button>
+        <button mat-raised-button color="warn" (click)="deleteRessource(selectedRessource.id)" >Supprimer</button>
+      </div>    
     </div>
   </div>

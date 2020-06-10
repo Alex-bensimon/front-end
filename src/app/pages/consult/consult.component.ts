@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ressource } from './Ressource';
 import { ApiService } from 'src/service/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-consult',
@@ -11,7 +12,8 @@ export class ConsultComponent implements OnInit {
   ressources: Array<Ressource> ;
   selectedRessource: Ressource;
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService,
+    private router: Router) {}
 
   ngOnInit(): void {
      this.apiService.getRessources().subscribe((res) => {
@@ -29,4 +31,8 @@ export class ConsultComponent implements OnInit {
       // console.log(res);
     });
   }
+
+  updateRessource(id: number) {
+    this.router.navigate(['/update']);
+}
 }
