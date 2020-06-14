@@ -28,6 +28,8 @@ export class ConsultComponent implements OnInit {
 
   deleteRessource(id: number): void {
     this.apiService.deleteRessource(id).subscribe((res) => {
+      this.router.navigate(['/consult']);
+      window.location.reload();
       // console.log(res);
     });
   }
