@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 export class ConsultComponent implements OnInit {
   ressources: Array<Ressource> ;
   selectedRessource: Ressource;
-
   constructor(private apiService: ApiService,
-    private router: Router) {}
+    private router: Router) {
+    }
 
   ngOnInit(): void {
      this.apiService.getRessources().subscribe((res) => {

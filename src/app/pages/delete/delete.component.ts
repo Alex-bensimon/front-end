@@ -4,6 +4,7 @@ import { ApiService } from 'src/service/api.service';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-delete',
   templateUrl: './delete.component.html',
@@ -30,7 +31,7 @@ deleteForm;
       data => {
         this.deleteForm.reset();
         this.router.navigate(['/consult']);
-      },
+              },
         error => {
           alert('Error' + error.error);
           console.log('Error occured', error);

@@ -13,7 +13,7 @@ export class UpdateComponent implements OnInit {
   submitted = false;
   ressourceForm;
 
-  constructor() {    }
+  constructor() {   }
 
   ngOnInit(): void {
   }
